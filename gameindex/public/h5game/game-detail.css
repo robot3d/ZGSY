@@ -1,0 +1,29 @@
+.g-content{background:#fff;margin-top:1rem;border-left:1.5rem solid transparent;border-right:1.5rem solid transparent;border-bottom:1.5rem solid transparent;position:relative;flex:1;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;display:flex;display:-webkit-flex;flex-direction:column;}
+
+.g-game-played{border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:1rem solid transparent;}
+.g-game-played .m-title{padding:0 1.5rem;border-bottom:1px solid #e1eaf2;}
+.g-game-played .m-title code{margin-left:0;}
+.g-game-hot{margin-bottom:2rem;}
+
+.g-gameInfo{margin-top:0;}
+
+.g-search-result{padding:0 1.5rem;background:#fff;margin-bottom:1rem;}
+.g-search-result .search-result-none{padding:1.5rem;font-size:1.4rem;color:#0a121a;}
+
+.swiper-container#game-detail .swiper-slide{margin-right:15px;}
+.swiper-container#game-detail .swiper-slide img{width: 100%;display: block;}
+
+/* 游戏客服 */
+.m-game-service{margin-top: 100%;line-height: 100%;position: relative;text-align: center;}
+.m-game-service .u-href{font-size: .3rem;color: #FA8432;letter-spacing: 0;position: relative;top: .05rem;}
+.m-game-service .u-href .u-s-logo{vertical-align: middle;display: inline-block;width: .38rem;height: .38rem;margin-right: .1rem;background: url(../images/ic-service.png) 0 0 /100% 100%;}
+.m-game-service:before{position: absolute;display: block;content: "";top: 0;left: 0;right: 0;margin: 0 auto;width: 6rem;height: 1px;background-image: url(../images/ic-line.png);background-size: 100% 100%;}
+.u-btn-load-more { width: 6.5rem; height: .6rem; line-height: .6rem; background-color: #fff; text-align: center; font-size: .3rem; color: #FF6D48; border-radius: .3rem; border: 1px solid #FF6D48; margin: .2rem auto .2rem; }
+.weixin {position: fixed; left: 0; top: 0; bottom: 0; background: rgba(0,0,0,0.8); filter: alpha(opacity=80); height: 100%; width: 100%; z-index: 888; }
+.weixin p { text-align: center; margin-top: 10%; padding: 0 5%; }
+.weixin img { max-width: 100%; height: auto; }
+.tabs-nav { display: -webkit-flex; height: 65px; font-size: 14px; white-space: nowrap; background-color: #fff; -webkit-box-align: stretch; -webkit-box-direction: normal; -webkit-box-lines: single; -webkit-box-orient: horizontal; -webkit-box-pack: justify; padding: 0 16px; }
+.tabs-nav-li { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; height: 60px; line-height: 60px; color: #fff; text-align: center; padding: 0 14px 0 15px; width: 10.666667%; border: 1px solid #eee; border-left: 0; background: #00c4c4; border-radius: 5px 5px 0px 0px; }
+.tabs-curr { background: #fff; color: #0a3371; border-bottom: 1px solid #38f; }
+.m-game-servicex { margin-top: .2rem; line-height: .88rem; position: relative; }
+.hd { background-image: -webkit-linear-gradient(90deg, #673AB7 0%, #E91E63 100%); background-image: linear-gradient(90deg, #9C27B0 0%, #F44336 100%); }

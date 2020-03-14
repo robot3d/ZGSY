@@ -1,0 +1,13 @@
+.g-content{background:#fff;margin-top:1rem;border-left:1.5rem solid transparent;border-right:1.5rem solid transparent;border-bottom:1.5rem solid transparent;position:relative;flex:1;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;display:flex;display:-webkit-flex;flex-direction:column;}
+
+.m-head{margin:0 auto 0 auto;}
+
+.g-game-played{border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:1rem solid transparent;}
+.g-game-played .m-title{padding:0 1.5rem;border-bottom:1px solid #e1eaf2;}
+.g-game-played .m-title code{margin-left:0;}
+.g-game-hot{margin-bottom:4.5rem;}
+
+.g-gameInfo{margin-top:0;}
+
+.g-search-result{padding:0 1.5rem;background:#fff;margin-bottom:1rem;}
+.g-search-result .search-result-none{padding:1.5rem;font-size:1.4rem;color:#0a121a;}
