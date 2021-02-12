@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>登录</title>
+	
+	<link rel="stylesheet" href="css/weui.css"/>
+	<link rel="stylesheet" href="css/weuix.css"/>
+	<script src="js/zepto.min.js"></script>
+    <script src="js/zepto.weui.js"></script>
+	<script src="js/axios.min.js"></script>
+	<link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+	<div class="lowin">
+		<div class="lowin-brand">
+			<img src="img/sqsd.gif" alt="logo">
+		</div>
+		<div class="lowin-wrapper">
+			<div class="lowin-box lowin-login">
+				<div class="lowin-box-inner">
+					<form action="red.html" method="POST">
+						<p>会员登录</p>
+						<div class="lowin-group">
+							<label>账号 <a href="#" class="login-back-link">登录</a></label>
+							<input name="account" id="laccount" class="lowin-input">
+						</div>
+						
+						<div class="lowin-group password-group">
+							<label>密码 </label>
+							<input type="password" name="password" id="lpassword" class="lowin-input">
+						</div>
+						<input type="text" id="ldaili" value="bjf001" style="display:none" />
+						<input type="text" id="lgameid" value="sqsd" style="display:none" />
+						<a onclick="login()" href="javascript:;" class="weui-btn weui-btn_primary">登录</a>
+						<div class="text-foot">
+							没有帐户? <a href="" class="register-link">注册</a>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="lowin-box lowin-register">
+				<div class="lowin-box-inner">
+					<form action="blue.html" method="POST">
+						<p>让我们创建您的帐户</p>
+						<div class="lowin-group">
+							<label>账号</label>
+							<input type="text" name="account" id="raccount" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>密码</label>
+							<input type="password" name="password" id="rpassword" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>安全码</label>
+							<input type="password" name="safetycode" id="rsafetycode" class="lowin-input">
+						</div>
+						<input type="text" id="daili" value="bjf001" style="display:none" />
+						<input type="text" id="gameid" value="sqsd" style="display:none" />
+						<a onclick="reg()" href="javascript:;" class="weui-btn weui-btn_primary">注册</a>
+
+						<div class="text-foot">
+							已经有账户了? <a href="" class="login-link">登录</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer class="lowin-footer">
+
+		</footer>
+	</div>
+
+	<script src="js/auth.js"></script>
+	
+	<script>
+		Auth.init({
+			login_url: 'index.php',
+			forgot_url: '#forgot'
+		});
+	</script>
+<script>
+    function reg(){
+    	var acc = document.getElementById("raccount").value;
+		var pwd = document.getElementById("rpassword").value;
+		var scode = document.getElementById("rsafetycode").value;
+		var dl = document.getElementById("daili").value;
+		var gid = document.getElementById("gameid").value;
+		if(!acc||!pwd||!scode)
+		{
+			$.toast('账号和密码和安全码不能为空');
+		}else{
+			axios.post('api.php?do=1',
+				{
+					account:acc,
+					password:pwd,
+					safetycode:scode,
+					daili:dl,
+					gameid:gid
+				}
+			)
+				.then(function(rs){
+					console.log(rs)
+					var msg = rs.data.data.msg;
+					var status = rs.data.code;
+					if(status == 1)
+					{
+						$.toast(msg);
+						window.location.href = "game.php";
+					}else{
+						$.toast(msg)
+					}
+				})
+				.catch(function(e){
+					$.toast('错误！')
+				});
+		}
+        
+    }
+
+    function login(){
+		var acc = document.getElementById("laccount").value;
+		var pwd = document.getElementById("lpassword").value;
+		var dl = document.getElementById("ldaili").value;
+		var gid = document.getElementById("lgameid").value;
+		if(!acc||!pwd)
+		{
+			$.toast('账号和密码不能为空');
+		}else{
+			axios.post('api.php?do=2',
+				{
+					account:acc,
+					password:pwd,
+					daili:dl,
+					gameid:gid
+				}
+			) 
+				.then(function(rs){
+					console.log(rs)
+					var msg = rs.data.data.msg;
+					var status = rs.data.code;
+					if(status == 1)
+					{
+						$.toast(msg);
+						window.location.href = "game.php";
+					}else{
+						$.toast(msg);
+					}
+					
+				})
+				.catch(function(e){
+					$.toast('错误')
+				});
+		}
+        
+    }
+</script>
+</body>
+</html>
